@@ -1,5 +1,4 @@
-Foodcoops.net deployment demo
-=============================
+# Foodcoops.net deployment demo
 
 You need to create a certificate for your setup before you can start. The certificate must be a single file containing the blocks `-----BEGIN PRIVATE KEY-----` and `-----BEGIN CERTIFICATE-----`. For testing purpose only you can add it via `COPY` in `haproxy/Dockerfile` or you mount it via a volume in the `docker-compose.yml`. Check out the comments in the files.
 
@@ -29,3 +28,5 @@ GRANT ALL PRIVILEGES ON foodsoft_test.* TO 'foodsoft';
 FLUSH PRIVILEGES;
 exit
 ```
+
+Note that the above is not enough because no tables are created. There should already be some task to handle this.
